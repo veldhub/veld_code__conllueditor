@@ -1,0 +1,30 @@
+x-veld:
+  code:
+    description: "a veldified code, enapsulating the conllueditor web server from 
+      https://github.com/Orange-OpenSource/conllueditor . It uses a pre-built image from dockerhub."
+    topic:
+      - NLP
+      - Universal Dependencies
+      - Tokenization
+      - Lemmatization
+      - Part Of Speech
+      - Dependency Parsing
+      - Grammatical Annotation
+
+    storage:
+      volume: /data/
+      description: "the storage folder for all the conllu files to be processed."
+      file_type: conllu
+      environment_var: filename
+
+services:
+  conllueditor:
+    image: jheinecke/conllueditor:latest
+    ports:
+      - 8888:5555
+    volumes:
+      - ./data/:/data/
+    user: "1000:1000"
+    environment:
+      filename: en.conllu
+
