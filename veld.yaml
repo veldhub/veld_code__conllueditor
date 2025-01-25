@@ -1,7 +1,9 @@
 x-veld:
   code:
     description: "a veldified code, enapsulating the conllueditor web server from 
-      https://github.com/Orange-OpenSource/conllueditor . It uses a pre-built image from dockerhub."
+      https://github.com/Orange-OpenSource/conllueditor . It uses a pre-built image from dockerhub. 
+      After starting this docker container, the web service can be reached at 
+      http://localhost:8888/ ."
     topic:
       - NLP
       - Universal Dependencies
@@ -26,5 +28,5 @@ services:
       - ./data/:/data/
     user: "1000:1000"
     environment:
-      filename: en.conllu
+      filename: null
 
