@@ -20,7 +20,7 @@ x-veld:
       environment_var: filename
 
 services:
-  conllueditor:
+  veld_conllueditor:
     image: jheinecke/conllueditor:latest
     ports:
       - 8888:5555
