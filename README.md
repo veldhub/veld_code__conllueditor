@@ -1,4 +1,35 @@
-# Editor for Treebanks in CoNLL-U format and Front-End for dependency parser servers
+# ![veld code](https://raw.githubusercontent.com/veldhub/.github/refs/heads/main/images/symbol_V_letter.png) (veldified) Editor for Treebanks in CoNLL-U format and Front-End for dependency parser servers
+
+## notes on veldification
+
+This repo contains a [code veld](https://zenodo.org/records/13322913) encapsulating the code from 
+https://github.com/Orange-OpenSource/conllueditor . The only addition to the upstream repo is the
+veld.yaml wrapper and this additional documentation within the readme. The rest is kept completely
+untouched.
+
+A demo chain repo can be found here: https://github.com/veldhub/veld_chain__demo_conllueditor .
+
+## requirements
+
+- git
+- docker compose (note: older docker compose versions require running `docker-compose` instead of 
+  `docker compose`)
+
+## how to use
+
+The code veld may be integrated into a chain veld, or used directly by adapting the configuration 
+within its yaml file and using the template folders provided in this repo. Open the veld yaml file 
+for more information.
+
+**[./veld.yaml](./veld.yaml)** 
+
+Runs the conllu editor which can be reached at http://localhost:8888/ .
+
+```
+docker compose -f veld.yaml up
+```
+
+## original README from here on
 
 This Software is a tool which facilitates the editing of syntactic relations and morphological features of files in CoNLL-U format (http://universaldependencies.org/format.html). It uses a Java-based server and a HTML/CSS/Javascript based front-end. The editor loads the CoNLL-U file and saves changes to disk (and performs a `git commit` if the file is under git version control).
 
